@@ -5,10 +5,7 @@ import org.springframework.security.authentication.UsernamePasswordAuthenticatio
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 import java.security.Principal;
@@ -40,6 +37,20 @@ public class HomeController {
         return "index";
     }
 
+    /* taken from:
+     * https://www.baeldung.com/get-user-in-spring-security */
+    @GetMapping("/username")
+    @ResponseBody
+    public String currentUsername(Principal principal){
+        return principal.getName();
+    }
+//    @GetMapping("/username")
+//    @ResponseBody
+//    public String currentUsernameSimple(HttpServletRequest request){
+//        Principal principal = request.getUserPrincipal();
+//        return principal.getName();
+//    }
+
     @RequestMapping("/")
     public String index(){
         return "index";
@@ -59,6 +70,7 @@ public class HomeController {
         return "secure";
     }
 
+    /* Addition for separate log out page */
     @RequestMapping("/logoutconfirm")
     public String logoutconfirm(){
         return "logoutconfirm";
