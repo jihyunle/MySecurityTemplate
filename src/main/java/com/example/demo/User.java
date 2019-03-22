@@ -42,7 +42,7 @@ public class User {
 
     /* Anytime we create an overloaded constructor we need to have a default no-arg constructor.
      *
-      * Also, a jaba bean must have private variables, no-arg constructor, and getters and setters. */
+      * Also, a java bean must have private variables, no-arg constructor, and getters and setters. */
 
     public User(String email, String password, String firstName, String lastName, boolean enabled, String username) {
         this.setEmail(email);
