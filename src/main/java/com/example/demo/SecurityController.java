@@ -1,3 +1,12 @@
+/* When using separate controller for Security and MainContent,
+* be sure to update MainContact controller with
+* proper UserService functions
+*
+* You need to create an object of UserService class,
+* then be sure to assign a user to each instatiation of the Java Bean
+*
+* over and out-- */
+
 package com.example.demo;
 
 import org.springframework.beans.factory.annotation.Autowired;
